@@ -18,7 +18,7 @@
 
 @property (nonatomic, weak) id<MKCalendarDaysOfWeekViewDelegate> delegate;
 
-// Designated Initializer
+// Designated Initializers
 - (id)initWithFrame:(CGRect)frame calendar:(NSCalendar*)calendar;
 - (id)initWithCalendar:(NSCalendar*)calendar;
 

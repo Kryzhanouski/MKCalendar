@@ -13,6 +13,8 @@
 
 @property (nonatomic, weak) MKCalendarWeekView* customView;
 
+@property (nonatomic, strong) NSCalendar* calendar;
+
 @end
 
 @implementation MKCalendarWeekViewController
@@ -35,13 +37,15 @@
 
 - (void)initialSetup
 {
+    self.calendar = [NSCalendar currentCalendar];
+    [self.calendar setLocale:[NSLocale currentLocale]];
 }
 
 #pragma mark - Controller Livecycle
 - (void)loadView
 {
     CGRect frame = [UIScreen mainScreen].applicationFrame;
-    MKCalendarWeekView* customView = [[MKCalendarWeekView alloc] initWithFrame:frame];
+    MKCalendarWeekView* customView = [[MKCalendarWeekView alloc] initWithFrame:frame calendar:self.calendar ];
     customView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.customView = customView;
     self.view = customView;

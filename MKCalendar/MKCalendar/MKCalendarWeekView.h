@@ -10,4 +10,14 @@
 
 @interface MKCalendarWeekView : UIView
 
+
+// Designated Initializers
+- (id)initWithFrame:(CGRect)frame calendar:(NSCalendar*)calendar;
+- (id)initWithCalendar:(NSCalendar*)calendar;
+
+- (void)setDate:(NSDate*)date;
+- (NSDate*)date;
+
+- (void)setDate:(NSDate*)date animated:(BOOL)animated;
+
 @end
