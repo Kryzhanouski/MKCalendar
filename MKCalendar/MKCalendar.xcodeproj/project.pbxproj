@@ -19,6 +19,7 @@
 		478540B0181925530017D227 /* MKCalendarWeekViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 478540AD181924730017D227 /* MKCalendarWeekViewController.h */; };
 		478540B4181927410017D227 /* MKCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 478540B3181927410017D227 /* MKCalendarWeekView.m */; };
 		478540B7181940A40017D227 /* MKCalendarDaysOfWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 478540B6181940A40017D227 /* MKCalendarDaysOfWeekView.m */; };
+		921869FD18265B24009B4709 /* MKWeekDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 921869FC18265B24009B4709 /* MKWeekDayPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		478540B3181927410017D227 /* MKCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCalendarWeekView.m; sourceTree = "<group>"; };
 		478540B5181940A40017D227 /* MKCalendarDaysOfWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCalendarDaysOfWeekView.h; sourceTree = "<group>"; };
 		478540B6181940A40017D227 /* MKCalendarDaysOfWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCalendarDaysOfWeekView.m; sourceTree = "<group>"; };
+		921869FB18265B24009B4709 /* MKWeekDayPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKWeekDayPicker.h; sourceTree = "<group>"; };
+		921869FC18265B24009B4709 /* MKWeekDayPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKWeekDayPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 				478540B3181927410017D227 /* MKCalendarWeekView.m */,
 				478540B5181940A40017D227 /* MKCalendarDaysOfWeekView.h */,
 				478540B6181940A40017D227 /* MKCalendarDaysOfWeekView.m */,
+				921869FB18265B24009B4709 /* MKWeekDayPicker.h */,
+				921869FC18265B24009B4709 /* MKWeekDayPicker.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				478540B4181927410017D227 /* MKCalendarWeekView.m in Sources */,
 				478540B7181940A40017D227 /* MKCalendarDaysOfWeekView.m in Sources */,
 				478540AF181924730017D227 /* MKCalendarWeekViewController.m in Sources */,
+				921869FD18265B24009B4709 /* MKWeekDayPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

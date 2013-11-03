@@ -7,6 +7,7 @@
 //
 
 #import "MKCalendarDaysOfWeekView.h"
+#import "MKWeekDayPicker.h"
 
 @interface MKCalendarDaysOfWeekView ()
 @property (nonatomic, strong) NSCalendar* calendar;
@@ -50,6 +51,12 @@
     self.backgroundColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:248.0f/255.0f alpha:1.0f];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self initializeWeekdaySymbolLabels];
+    
+    MKWeekDayPicker* weekPage = [[MKWeekDayPicker alloc] initWithItems:@[@"20",@"21",@"22",@"23",@"24",@"25",@"26"]];
+    [weekPage setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addSubview:weekPage];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[weekPage]|" options:0 metrics:nil views:@{@"weekPage":weekPage}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[weekPage(36)]" options:0 metrics:nil views:@{@"weekPage":weekPage}]];
 }
 
 #pragma mark - Implement Private Interface
@@ -93,6 +100,15 @@
     NSDictionary* views = [NSDictionary dictionaryWithObjects:self.weekdaySymbolLabels forKeys:@[@"view1",@"view2",@"view3",@"view4",@"view5",@"view6",@"view7"]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-20-[view1(width)]-spacing-[view2(width)]-spacing-[view3(width)]-spacing-[view4(width)]-spacing-[view5(width)]-spacing-[view6(width)]-spacing-[view7(width)]" options:NSLayoutFormatAlignAllTop metrics:@{@"width":@(labelWidth),@"spacing":@(spacing)} views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view1(height)]" options:NSLayoutFormatAlignAllTop metrics:@{@"height":@(labelHeight)} views:views]];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextMoveToPoint(context, 0, rect.size.height-1);
+    CGContextAddLineToPoint(context, rect.size.width, rect.size.height-1);
+    [[UIColor colorWithRed:215.0f/255.0f green:215.0f/255.0f blue:215.0f/255.0f alpha:1.0f] setStroke];
+    CGContextStrokePath(context);
 }
 
 #pragma mark - Implement Public Interface
